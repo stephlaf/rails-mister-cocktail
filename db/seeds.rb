@@ -16,9 +16,13 @@ ingredients['drinks'].each do |ingredient_hash|
 end
 
 
-10.times do |cocktails|
+5.times do |cocktails|
   new_c = Cocktail.new(
     name: Faker::Ancient.titan,
     )
   new_c.save
+  5.times do
+    new_dose = Dose.new({ description: Faker::Measurement.volume, cocktail: new_c, ingredient: Ingredient.all.sample })
+  new_dose.save
+  end
 end
