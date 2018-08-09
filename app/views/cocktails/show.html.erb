@@ -1,4 +1,6 @@
 <h1> <%= @cocktail.name %></h1>
+<span> Does it suck? If so, pour this one down the drain</span>
+<p> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_path(@cocktail), method: 'delete' %> </p>
 
 <p> <% @cocktail.doses.each do |dose| %></p>
   <span> <%= dose.description %> of <%= dose.ingredient.name %> </span>
@@ -12,4 +14,4 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to 'Back to list', root_path %>
+<p> <%= link_to 'Back to list', root_path %> </p>
