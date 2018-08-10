@@ -1,6 +1,6 @@
 <h1> <%= @cocktail.name %></h1>
-<span> Does it suck? If so, pour this one down the drain</span>
-<p> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_path(@cocktail), method: 'delete' %> </p>
+<p> <%= link_to 'Add some stuff to it', new_cocktail_dose_path(@cocktail) %> </p>
+
 
 <p> <% @cocktail.doses.each do |dose| %></p>
   <span> <%= dose.description %> of <%= dose.ingredient.name %> </span>
@@ -11,8 +11,9 @@
 <%= simple_form_for [@cocktail] do |f| %>
   <%= f.input :name, label: 'Want to rename this cocktail?' %>
 
-  <%= f.submit 'Rename this guy!' %>
+  <%= f.submit 'Rename the guy!' %>
 <% end %>
 
-<p> <%= link_to 'Back to list', root_path %> </p>
-<p> <%= link_to 'Add new dose', new_cocktail_dose_path(@cocktail) %> </p>
+
+<span> Does it suck? If so, pour this one down the drain</span>
+<p> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_path(@cocktail), method: 'delete' %> </p>

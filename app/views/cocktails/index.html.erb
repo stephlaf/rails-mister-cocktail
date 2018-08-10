@@ -1,8 +1,16 @@
 <h1>Our Selection of Cocktails</h1>
 
-<%= link_to 'Add a cocktail', new_cocktail_path %>
-
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-<% end  %>
-
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div id="col" class="col-sm-3" >
+          <% image_id = "https://picsum.photos/200/175/?image=" + rand(1..100).to_s %>
+          <div class="cocktail-card card">
+            <img class="card-img-top" src=<%= image_id %> alt="Card image cap">
+            <div class="cocktail-card-body card-body">
+              <h3 class="card-title"> <%= cocktail.name %></h3>
+              <%= link_to 'Details', cocktail_path(cocktail), class: "navbar-wagon-link" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
