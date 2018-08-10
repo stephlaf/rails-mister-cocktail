@@ -1,4 +1,4 @@
-<h1>Doses#edit</h1>
+<h1> <%= @cocktail.name %></h1>
 
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :ingredient_id, collection: Ingredient.all, label: 'Sooo, what do you want to add here?' %>
