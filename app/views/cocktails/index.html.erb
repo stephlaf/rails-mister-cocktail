@@ -1,16 +1,21 @@
-<h1>Our Selection of Cocktails</h1>
+<%= render 'components/banner' %>
 
-  <div class="row">
-      <% @cocktails.each do |cocktail| %>
-        <div id="col" class="col-sm-3" >
-          <% image_id = "https://picsum.photos/200/175/?image=" + rand(1..100).to_s %>
-          <div class="cocktail-card card">
-            <img class="card-img-top" src=<%= image_id %> alt="Card image cap">
-            <div class="cocktail-card-body card-body">
-              <h3 class="card-title"> <%= cocktail.name %></h3>
-              <%= link_to 'Details', cocktail_path(cocktail), class: "navbar-wagon-link" %>
+<div class="container text-center container-size">
+
+  <h1 id="index" class="index-h1">Our Selection</h1>
+
+    <div class="row">
+        <% @cocktails.each do |cocktail| %>
+          <div id="col" class="col-sm-3" >
+            <div class="cocktail-card card">
+              <%= cl_image_tag(cocktail.photo, width: 200, height: 175, crop: :fill, class: 'card-img-border') %>
+              <div class="cocktail-card-body card-body">
+                <h3 class="card-title"> <%= cocktail.name %></h3>
+                <%= link_to 'Details', cocktail_path(cocktail), class: "btn btn-info btn-sm card-link" %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
-  </div>
+        <% end %>
+    </div>
+
+</div>

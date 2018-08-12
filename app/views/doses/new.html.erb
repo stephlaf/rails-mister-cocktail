@@ -1,7 +1,16 @@
-<h1> <%= @cocktail.name %></h1>
+  <div class="container text-center">
+  <div class="container text-center margin-top">
+    <div class="cocktail-card">
+      <%= cl_image_tag(@cocktail.photo, width: 200, height: 175, crop: :fill, class: 'card-img-top card-img-border') %>
 
-  <%= simple_form_for [@cocktail, @dose] do |f| %>
-    <%= f.input :ingredient_id, collection: Ingredient.all, label: 'Sooo, what do you want to add here?' %>
-    <%= f.input :description, label: 'And about how much?'  %>
-    <%= f.submit 'Add your magic...' %>
-  <% end %>
+      <h1> <%= @cocktail.name %></h1>
+
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :ingredient_id, collection: Ingredient.all, label: 'Sooo, what do you want to add here?' %>
+          <%= f.input :description, label: 'And about how much?'  %>
+          <%= f.submit 'Add your magic...', class: 'btn btn-info btn-sm m-b' %>
+        <% end %>
+
+   </div>
+ </div>  
+</div>        

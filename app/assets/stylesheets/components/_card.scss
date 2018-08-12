@@ -1,19 +1,46 @@
 .cocktail-card {
   border: 1px solid rgba(60, 60, 60, 0.3);
-  border-radius: 2px;
-  background-color: rgba(150, 150, 150, 0.8);
+  border-radius: 3px;
+  // background-color: $card-yellow;
+  background-color: rgb(163, 139, 130);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  color: rgb(230, 230, 230);
+  p {
+    margin-top: 10px;
+  }
+  i {
+    color: rgb(230, 230, 230);
+    font-size: 24px;
+  }
+} 
+.m-b {
+  margin-bottom: 13px;
 }
 
 .cocktail-card-body {
-  // border: 1px solid blue;
+  // border: 1px solid red;
   margin-bottom: 5px;
 }
 
 .row  img {
   margin: 5px 0;
+  // padding-top: 10px
 }
 
 #col {
   margin-bottom: 10px;
 }
+
+#show-container {
+  width: 60vh;
+}
+
+.card-img-border {
+  border: 1px solid rgba(60, 60, 60, 0.3);
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+.rename {
+  margin: 10px 0;
+}
+

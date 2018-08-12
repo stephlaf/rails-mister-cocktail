@@ -1,6 +1,16 @@
-<h1>Create your own</h1>
+<div class="container text-center">
+  <div class="container text-center margin-top">
+    <div class="cocktail-card">
+      
+      <h1>Create your own</h1>
 
-<%= simple_form_for [@cocktail] do |f| %>
-  <%= f.input :name, label: 'Whatchagonnacallit?' %>
-  <%= f.submit 'Bring it to life!' %>
-<% end %>
+      <%= simple_form_for [@cocktail] do |f| %>
+        <%= f.input :name, label: 'How shall you name it?' %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo %>
+        <%= f.submit 'Bring it to life!', class: 'btn btn-info btn-sm m-b' %>
+      <% end %>
+
+   </div>
+ </div>  
+</div> 

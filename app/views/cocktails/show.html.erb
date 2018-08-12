@@ -1,19 +1,28 @@
-<h1> <%= @cocktail.name %></h1>
-<p> <%= link_to 'Add some stuff to it', new_cocktail_dose_path(@cocktail) %> </p>
+<div class="container text-center">
+  <div class="container text-center margin-top">
+    <div class="cocktail-card">
+      <%= cl_image_tag(@cocktail.photo, width: 200, height: 175, crop: :fill, class: 'card-img-top card-img-border') %>
 
 
-<p> <% @cocktail.doses.each do |dose| %></p>
-  <span> <%= dose.description %> of <%= dose.ingredient.name %> </span>
-  <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: 'delete' %>
-  
-<% end %>
-
-<%= simple_form_for [@cocktail] do |f| %>
-  <%= f.input :name, label: 'Want to rename this cocktail?' %>
-
-  <%= f.submit 'Rename the guy!' %>
-<% end %>
+      <h1> <%= @cocktail.name %></h1>
+      <p> <%= link_to 'Add some stuff to it', new_cocktail_dose_path(@cocktail), class: 'btn btn-info btn-sm' %> </p>
 
 
-<span> Does it suck? If so, pour this one down the drain</span>
-<p> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_path(@cocktail), method: 'delete' %> </p>
+      <p> <% @cocktail.doses.each do |dose| %></p>
+        <span> <%= dose.description %> of <%= dose.ingredient.name %> </span>
+        <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: 'delete' %> 
+      <% end %>
+
+      <%= simple_form_for [@cocktail] do |f| %>
+        <%= f.input :name, label: 'Want to rename this drink?', class: 'text-center' %>
+
+        <%= f.submit 'Rename the guy!', class: 'btn btn-info btn-sm m-b' %>
+      <% end %>
+
+
+      <span> Does it suck? If so, throw it in the bin</span>
+      <p> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, cocktail_path(@cocktail), method: 'delete' %> </p>
+
+    </div>
+  </div>  
+ </div>
