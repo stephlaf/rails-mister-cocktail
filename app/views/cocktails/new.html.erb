@@ -6,8 +6,8 @@
 
       <%= simple_form_for [@cocktail] do |f| %>
         <%= f.input :name, label: 'How shall you name it?' %>
-        <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit 'Bring it to life!', class: 'btn btn-info btn-sm m-b' %>
       <% end %>
 
